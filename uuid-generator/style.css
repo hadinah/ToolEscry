@@ -1,0 +1,337 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+header {
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.8em;
+    color: #333;
+    margin-bottom: 0.2em;
+}
+
+header p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+main {
+    width: 100%;
+    max-width: 600px; 
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; 
+    gap: 30px;
+}
+
+.generator-section {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 20px;
+}
+
+.generator-section h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 1.5em;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    font-weight: 500;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+#generateBtn {
+    background-color: #8E6FF7;
+    color: white;
+    font-size: 1.2em;
+    padding: 15px 30px;
+}
+
+#generateBtn:hover {
+    background-color: #7a5cd0;
+}
+
+.uuid-display-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    gap: 10px; 
+}
+
+#uuidValue {
+    font-size: 1.1em;
+    word-break: break-all;
+    flex-grow: 1;
+    text-align: center; 
+    width: 100%; 
+    padding-right: 0; 
+}
+
+.monospace-font {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+#copyUuidBtn {
+    background-color: #6c757d;
+    color: white;
+    padding: 8px 15px;
+}
+
+#copyUuidBtn:hover {
+    background-color: #5a6268;
+}
+
+.qr-code-container {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #eee;
+}
+
+#qrCodeImg {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+#downloadQrBtn {
+    background-color: #28a745;
+    color: white;
+}
+
+#downloadQrBtn:hover {
+    background-color: #218838;
+}
+
+.bulk-controls {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.uuid-count-input-group {
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+.bulk-controls label {
+    font-size: 1em;
+    color: #555;
+    white-space: nowrap; 
+}
+
+.bulk-controls input[type="number"] {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    width: 80px;
+    box-sizing: border-box;
+}
+
+#generatePdfBtn {
+    background-color: #17a2b8;
+    color: white;
+    font-size: 1.1em;
+    padding: 12px 25px;
+}
+
+#generatePdfBtn:hover {
+    background-color: #138496;
+}
+
+.section-divider {
+    width: 100%;
+    border: none;
+    height: 1px;
+    background-color: #eee;
+    margin: 20px 0;
+}
+
+.uuid-management-controls {
+    display: flex;
+    flex-direction: column; 
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.uuid-management-controls button {
+    font-size: 0.95em;
+    padding: 10px 15px;
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+#exportUuidsBtn {
+    background-color: #6c757d;
+    color: white;
+}
+
+#exportUuidsBtn:hover {
+    background-color: #5a6268;
+}
+
+#importUuidsBtn {
+    background-color: #007bff;
+    color: white;
+}
+
+#importUuidsBtn:hover {
+    background-color: #0056b3;
+}
+
+#clearUuidsBtn {
+    background-color: #dc3545;
+    color: white;
+}
+
+#clearUuidsBtn:hover {
+    background-color: #c82333;
+}
+
+footer {
+    margin-top: auto;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #777;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+footer a {
+    color: #8E6FF7;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.notification-area {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    width: 100%; 
+    max-width: 300px; 
+    box-sizing: border-box;
+    padding: 0 10px; 
+}
+
+
+.notification {
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: white;
+    font-size: 0.95em;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, top 0.3s ease-out;
+    position: relative;
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+.notification.success {
+    background-color: #28a745;
+}
+
+.notification.error {
+    background-color: #dc3545;
+}
+
+@keyframes slideInAndFadeOut {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    15% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    85% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+@media (min-width: 768px) {
+    main {
+        max-width: 960px; 
+        flex-direction: row; 
+        gap: 40px; 
+        padding: 20px;
+    }
+
+    .generator-section {
+        flex: 1; 
+        padding: 40px; 
+        gap: 25px; 
+    }
+
+    .uuid-display-container {
+        flex-direction: row;
+    }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UUID Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "qrcode": "https://cdn.jsdelivr.net/npm/qrcode@1.5.3/+esm",
+                "jspdf": "https://cdn.jsdelivr.net/npm/jspdf@2.5.1/+esm"
+            }
+        }
+    </script>
+    <meta name="author" content="hadinah">
+    <meta name="repo" content="toolescry">
+    <meta name="license" content="GPL 3">
+</head>
+<body>
+    <header>
+        <h1>UUID Generator</h1>
+        <p>Generate 128-bit UUID and QR Code</p>
+    </header>
+
+    <main>
+        <section class="generator-section">
+            <h2>Single UUID</h2>
+            <button id="generateBtn">Generate UUID</button>
+            
+            <div class="uuid-display-container">
+                <span id="uuidValue" class="monospace-font"></span>
+                <button id="copyUuidBtn">Copy</button>
+            </div>
+
+            <div id="qrCodeContainer" class="qr-code-container">
+                <img id="qrCodeImg" alt="QR Code">
+            </div>
+            <button id="downloadQrBtn">Download QR</button>
+        </section>
+
+        <section class="generator-section bulk-generator-section">
+            <h2>Generate Multiple QR Codes as PDF</h2>
+            <div class="bulk-controls">
+                <div class="uuid-count-input-group">
+                    <label for="uuidCount" title="(1-176 QR Codes per page)">Number of QR Codes:</label>
+                    <input type="number" id="uuidCount" name="uuidCount" min="1" value="10">
+                </div>
+                <button id="generatePdfBtn">Generate PDF</button>
+            </div>
+            
+            <hr class="section-divider"> 
+
+            <h2>Manage Generated UUIDs</h2>
+            <div class="uuid-management-controls">
+                <button id="exportUuidsBtn">Export UUIDs (JSON)</button>
+                <input type="file" id="importUuidsInput" accept=".json" style="display: none;">
+                <button id="importUuidsBtn">Import UUIDs (JSON)</button>
+                <button id="clearUuidsBtn">Clear All UUIDs</button> 
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Author: hadinah | Repo: toolescry | License: GPL 3</p>
+    </footer>
+
+    <div id="notificationArea" class="notification-area">
+        
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
+
