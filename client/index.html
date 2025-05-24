@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToolEscry</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script type="importmap">
+        {
+            "imports": {
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1 class="app-logo">ToolEscry</h1>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="#" id="sidebar-scan-link">Scan Tool QR</a></li>
+                <li><a href="#">View All Tools</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <section id="scanner-section" class="hidden">
+                <div class="scanner-container">
+                    <video id="qr-video" playsinline></video>
+                    <div class="viewfinder"></div>
+                    <div id="scanner-message" class="scanner-message">Align QR code within the frame</div>
+                </div>
+                <div id="loading-indicator" class="loading-indicator hidden">Scanning...</div>
+            </section>
+
+            <section id="form-section" class="hidden">
+                <h2>Tool Information</h2>
+                <form id="tool-form">
+                    <div class="form-group">
+                        <label for="uuid">UUID:</label>
+                        <input type="text" id="uuid" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tool-name">Tool Name:</label>
+                        <input type="text" id="tool-name" placeholder="Enter tool name">
+                        <div class="error-message" id="tool-name-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="parent-tool">Parent Tool/Category:</label>
+                        <select id="parent-tool">
+                            <option value="">Select Category</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="mechanical">Mechanical</option>
+                            <option value="software">Software</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <div class="error-message" id="parent-tool-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea id="description" placeholder="Provide a brief description"></textarea>
+                        <div class="error-message" id="description-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tags">Tags/Labels (comma-separated):</label>
+                        <input type="text" id="tags" placeholder="e.g. electronic, sensor, module">
+                        <div class="error-message" id="tags-error"></div>
+                    </div>
+
+                    <button type="submit" id="save-tool-button" class="primary-button">Save Tool</button>
+                </form>
+                <div id="save-loading-indicator" class="loading-indicator hidden">Saving...</div>
+            </section>
+        </main>
+    </div>
+
+    <div id="toast-notification" class="toast-notification hidden">
+        <span id="toast-message"></span>
+    </div>
+
+    <div id="success-animation" class="success-animation hidden">
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+        </svg>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.1.1/dist/jsQR.min.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
